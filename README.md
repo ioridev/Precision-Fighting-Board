@@ -43,6 +43,3 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 We would like to express our gratitude to the developers and contributors of Teency 4.0 for their amazing work and support.
 
 
----
-
-*Note: Make sure to update the project-specific information such as repository URL, contact email, and license details according to your project.*
