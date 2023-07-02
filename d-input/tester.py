@@ -1,9 +1,32 @@
-from evdev import InputDevice, categorize, ecodes, KeyEvent
+import joystickapi  
+import msvcrt  
+import time  
 
-dev = InputDevice('/dev/input/eventX')  # 'X'はデバイスの番号
+print("start")  
 
-for event in dev.read_loop():
-    if event.type == ecodes.EV_KEY:
-        key_event = categorize(event)
-        if key_event.keystate == KeyEvent.key_down:
-            print('Key pressed:', key_event.keycode)
+num = joystickapi.joyGetNumDevs()  
+ret, caps, startinfo = False, None, None  
+for id in range(num):  
+  ret, caps = joystickapi.joyGetDevCaps(id)  
+  if ret:  
+    print("gamepad detected: " + caps.szPname)  
+    ret, startinfo = joystickapi.joyGetPosEx(id)  
+    break  
+else:  
+  print("no gamepad detected")  
+
+run = ret  
+prev_time = time.time() * 1000000  # initialize prev_time
+while run:  
+  if msvcrt.kbhit() and msvcrt.getch() == chr(27).encode(): # detect ESC  
+    run = False  
+
+  ret, info = joystickapi.joyGetPosEx(id)  
+  if ret:  
+    current_time = time.time() * 1000000
+    time_diff = current_time - prev_time
+    prev_time = current_time
+    print("Time difference:", time_diff, "μs")  # print the time difference
+
+   
+print("end")  
