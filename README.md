@@ -18,8 +18,8 @@ This project aims to develop the fastest game controller by utilizing the power 
 ## Installation
 Install the Arduino IDE 1.8.13 and Teensyduino 1.53.
 
-https://github.com/dmadison/ArduinoXInput
-
+[https://github.com/dmadison/ArduinoXInput
+](https://github.com/dmadison/ArduinoXInput_Teensy)
 
 ## Usage
 
