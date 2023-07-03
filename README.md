@@ -6,7 +6,7 @@
 
 This project aims to develop the fastest game controller by utilizing the power of Teency 4.0. We strive to achieve a polling rate of 8000Hz, delivering unparalleled responsiveness for an immersive gaming experience.
 
-**Note: This project is currently under development and not yet finalized.**
+**Note: This project is currently under development and not yet finalized.**  
 At this time, to play sf6, you must use keyboard input or D-input via Steam-Input. However, we have not tested the polling rate of Steam-Ipunt.
 
 
