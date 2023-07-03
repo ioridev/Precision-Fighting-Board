@@ -1711,14 +1711,14 @@ PROGMEM const uint8_t usb_config_descriptor_480[CONFIG_DESC_SIZE] = {
         0x81,                                   // bEndpointAddress (0x81 is IN1)
         0x03,                                   // bmAttributes (0x03 is interrupt no synch, usage type data)
         0x20, 0x00,                             // wMaxPacketSize (0x0020 is 1x32 bytes)
-        4,                                      // bInterval (polling interval in frames 4 frames)
+        1,                                      // bInterval (polling interval in frames 4 frames)
         // Endpoint 2 OUT
         7,                                      // bLength (length of ep2out in descriptor 7 bytes)
         5,                                      // bDescriptorType (5 is endpoint)
         0x02,                                   // bEndpointAddress (0x02 is OUT2)
         0x03,                                   // bmAttributes (0x03 is interrupt no synch, usage type data)
         0x20, 0x00,                             // wMaxPacketSize (0x0020 is 1x32 bytes)
-        8,                                      // bInterval (polling interval in frames 8 frames)
+        1,                                      // bInterval (polling interval in frames 8 frames)
         // Interface 1
         9,                                      // bLength (length of interface descriptor 9 bytes)
         4,                                      // bDescriptorType (4 is interface)
@@ -1737,28 +1737,28 @@ PROGMEM const uint8_t usb_config_descriptor_480[CONFIG_DESC_SIZE] = {
         0x83,                                   // bEndpointAddress (0x83 is IN3)
         0x03,                                   // bmAttributes (0x03 is interrupt no synch, usage type data)
         0x20, 0x00,                             // wMaxPacketSize (0x0020 is 1x32 bytes)
-        2,                                      // bInterval (polling interval in frames 2 frames)
+        1,                                      // bInterval (polling interval in frames 2 frames)
         // Endpoint 4 OUT
         7,                                      // bLength (length of ep4out descriptor 7 bytes)
         5,                                      // bDescriptorType (5 is endpoint)
         0x04,                                   // bEndpointAddress (0x04 is OUT4)
         0x03,                                   // bmAttributes (0x03 is interrupt no synch, usage type data)
         0x20, 0x00,                             // wMaxPacketSize (0x0020 is 1x32 bytes)
-        4,                                      // bInterval (polling interval in frames 4 frames)
+        1,                                      // bInterval (polling interval in frames 4 frames)
         // Endpoint 5 IN
         7,                                      // bLength (length of ep5in descriptor 7 bytes)
         5,                                      // bDescriptorType (5 is endpoint)
         0x85,                                   // bEndpointAddress (0x85 is IN5)
         0x03,                                   // bmAttributes (0x03 is interrupt no synch, usage type data)
         0x20, 0x00,                             // wMaxPacketSize (0x0020 is 1x32 bytes)
-        64,                                     // bInterval (polling interval in frames 64 frames)
+        1,                                     // bInterval (polling interval in frames 64 frames)
         // Endpoint 5 OUT (shares endpoint number with previous)
         7,                                      // bLength (length of ep5out descriptor 7 bytes)
         5,                                      // bDescriptorType (5 is endpoint)
         0x05,                                   // bEndpointAddress (0x05 is OUT5)
         0x03,                                   // bmAttributes (0x03 is interrupt no synch, usage type data)
         0x20, 0x00,                             // wMaxPacketSize (0x0020 is 1x32 bytes)
-        16,                                     // bInterval (polling interval in frames 16 frames)
+        1,                                     // bInterval (polling interval in frames 16 frames)
         // Interface 2
         9,                                      // bLength (length of interface descriptor 9 bytes)
         4,                                      // bDescriptorType (4 is interface)
@@ -1777,7 +1777,7 @@ PROGMEM const uint8_t usb_config_descriptor_480[CONFIG_DESC_SIZE] = {
         0x86,                                   // bEndpointAddress (0x86 is IN6)
         0x03,                                   // bmAttributes (0x03 is interrupt no synch, usage type data)
         0x20, 0x00,                             // wMaxPacketSize (0x0020 is 1x32 bytes)
-        16,                                     // bInterval (polling interval in frames 64 frames)+
+        1,                                     // bInterval (polling interval in frames 64 frames)+
         // Interface 3
         // This is the interface on which all the security handshaking takes place
         // We don't use this but it could be used for man-in-the-middle stuff
@@ -1789,7 +1789,7 @@ PROGMEM const uint8_t usb_config_descriptor_480[CONFIG_DESC_SIZE] = {
         0xFF,                                   // bInterfaceClass (Vendor Defined is 255)
         0xFD,                                   // bInterfaceSubClass (253)
         0x13,                                   // bInterfaceProtocol (19)
-        4,                                      // iInterface (Computer never asks for this, but an x360 would. so include one day?)
+        1,                                      // iInterface (Computer never asks for this, but an x360 would. so include one day?)
         // Another interface another Common Descriptor
         6,65,0,1,1,3
 #endif // XINPUT_INTERFACE
