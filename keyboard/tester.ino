@@ -23,6 +23,6 @@ void loop()
         Keyboard.release(KEY_U);
 
         // Delay to make the key press noticeable
-        delayMicroseconds(125); // 800
+        delayMicroseconds(125);
     }
 }
