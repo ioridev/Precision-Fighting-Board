@@ -87,6 +87,18 @@ void loop()
   XInput.setButton(BUTTON_L3, buttonL3);
   XInput.setButton(BUTTON_R3, buttonR3);
 
+  // SOCD
+  if (dpadRight && dpadLeft)
+  {
+    dpadRight = false;
+    dpadLeft = false;
+  }
+  if (dpadUp && dpadDown)
+  {
+    dpadUp = false;
+    dpadDown = false;
+  }
+
   XInput.setDpad(dpadUp, dpadDown, dpadLeft, dpadRight);
 
   boolean triggerLeft = !digitalRead(Pin_TriggerL);
