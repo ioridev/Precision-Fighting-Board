@@ -23,6 +23,14 @@ Install the Arduino IDE 1.8.13 and Teensyduino 1.53.
 [https://github.com/dmadison/ArduinoXInput
 ](https://github.com/dmadison/ArduinoXInput_Teensy)
 
+Each endpoint has an interval number. Set it to 1 for maximum polling rate.
+For example, on the joystick interface you'll find these lines in teensy4/usb_desc.h.
+```
+  #define JOYSTICK_INTERFACE    3       // Joystick
+  #define JOYSTICK_ENDPOINT     6
+  #define JOYSTICK_SIZE         12      //  12 = normal, 64 = extreme joystick
+  #define JOYSTICK_INTERVAL     2
+```
 ## Todo
 - [x] 8000Hz d-input
 - [x] 8000Hz Keyboard input
