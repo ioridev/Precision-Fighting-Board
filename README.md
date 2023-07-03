@@ -20,8 +20,7 @@ At this time, to play sf6 at 8000 Hz, you must use keyboard input or D input via
 ## Installation
 Install the Arduino IDE 1.8.13 and Teensyduino 1.53.
 
-[https://github.com/dmadison/ArduinoXInput
-](https://github.com/dmadison/ArduinoXInput_Teensy)
+Copy x-input/ArduinoXinput_Teensy/teensy over to C:\Program Files (x86)\Arduino\hardware　
 
 Each endpoint has an interval number. Set it to 1 for maximum polling rate.
 For example, on the joystick interface you'll find these lines in teensy4/usb_desc.h.
@@ -34,8 +33,7 @@ For example, on the joystick interface you'll find these lines in teensy4/usb_de
 ## Todo
 - [x] 8000Hz d-input
 - [x] 8000Hz Keyboard input
-- [ ] 8000Hz X-input
-- [ ] d-input + Steam input 8000hz test
+- [x] 8000Hz X-input
 - [ ] Easy installer
 - [ ] Gameplay Testing
 - [ ] Wingman FGC Testing
