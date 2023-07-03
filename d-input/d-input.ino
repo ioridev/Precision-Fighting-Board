@@ -1,5 +1,5 @@
 #define NUM_BUTTONS 15
-const uint8_t BUTTON_PINS[NUM_BUTTONS] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+const uint8_t BUTTON_PINS[NUM_BUTTONS] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15, 16, 17, 18};
 
 #define NUM_DPAD 4
 const uint8_t DPAD_PINS[NUM_DPAD] = {23, 22, 21, 20}; // Up, Right, Down, Left
