@@ -10,4 +10,3 @@ while True:
         time_diff = current_time - prev_time
         prev_time = current_time
         print("Time difference:", time_diff, "μs")
-        print(event.ev_type, event.code, event.state)
