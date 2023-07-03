@@ -21,6 +21,15 @@ Install the Arduino IDE 1.8.13 and Teensyduino 1.53.
 [https://github.com/dmadison/ArduinoXInput
 ](https://github.com/dmadison/ArduinoXInput_Teensy)
 
+## Todo
+- [x] 8000Hz d-input
+- [x] 8000Hz Keyboard input
+- [ ] 8000Hz X-input
+- [ ] Gameplay Testing
+- [ ] Wingman FGC Testing
+- [ ] Bounce
+
+
 ## Usage
 
 
