@@ -58,5 +58,5 @@ void loop()
     int16_t hatValue = HAT_MAP[dpad_bits];
     Joystick.hat(hatValue); // Set the hat switch to the calculated angle
 
-    delayMicroseconds(125);
+    delayMicroseconds(80);
 }
