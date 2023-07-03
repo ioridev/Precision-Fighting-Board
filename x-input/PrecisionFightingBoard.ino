@@ -1,41 +1,99 @@
 #include <XInput.h>
 
-#define NUM_BUTTONS 22
-const uint8_t BUTTON_PINS[NUM_BUTTONS] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15, 16, 17, 18, 19, 20, 21, 22};
+const int Pin_ButtonA = 0;
+const int Pin_ButtonB = 1;
+const int Pin_ButtonX = 2;
+const int Pin_ButtonY = 3;
+
+const int Pin_ButtonLB = 4;
+const int Pin_ButtonRB = 5;
+
+const int Pin_ButtonBack = 6;
+const int Pin_ButtonStart = 7;
+
+const int Pin_ButtonL3 = 8;
+const int Pin_ButtonR3 = 9;
+
+const int Pin_DpadUp = 10;
+const int Pin_DpadDown = 11;
+const int Pin_DpadLeft = 12;
+const int Pin_DpadRight = 13;
+
+const int Pin_TriggerL = A4;
+const int Pin_TriggerR = A5;
 
 void setup()
 {
-  for (int i = 0; i < NUM_BUTTONS; i++)
-  {
-    pinMode(BUTTON_PINS[i], INPUT_PULLUP);
-  }
+
+  pinMode(Pin_TriggerL, INPUT_PULLUP);
+  pinMode(Pin_TriggerR, INPUT_PULLUP);
+
+  pinMode(Pin_ButtonA, INPUT_PULLUP);
+  pinMode(Pin_ButtonB, INPUT_PULLUP);
+  pinMode(Pin_ButtonX, INPUT_PULLUP);
+  pinMode(Pin_ButtonY, INPUT_PULLUP);
+
+  pinMode(Pin_ButtonLB, INPUT_PULLUP);
+  pinMode(Pin_ButtonRB, INPUT_PULLUP);
+
+  pinMode(Pin_ButtonBack, INPUT_PULLUP);
+  pinMode(Pin_ButtonStart, INPUT_PULLUP);
+
+  pinMode(Pin_ButtonL3, INPUT_PULLUP);
+  pinMode(Pin_ButtonR3, INPUT_PULLUP);
+
+  pinMode(Pin_DpadUp, INPUT_PULLUP);
+  pinMode(Pin_DpadDown, INPUT_PULLUP);
+  pinMode(Pin_DpadLeft, INPUT_PULLUP);
+  pinMode(Pin_DpadRight, INPUT_PULLUP);
+
   XInput.setAutoSend(false);
+
+  XInput.begin();
 }
 
 void loop()
 {
-  bool up = !digitalRead(BUTTON_PINS[10]);
-  bool down = !digitalRead(BUTTON_PINS[11]);
-  bool left = !digitalRead(BUTTON_PINS[14]);
-  bool right = !digitalRead(BUTTON_PINS[15]);
+  boolean buttonA = !digitalRead(Pin_ButtonA);
+  boolean buttonB = !digitalRead(Pin_ButtonB);
+  boolean buttonX = !digitalRead(Pin_ButtonX);
+  boolean buttonY = !digitalRead(Pin_ButtonY);
 
-  XInput.setDpad(up, down, left, right);
+  boolean buttonLB = !digitalRead(Pin_ButtonLB);
+  boolean buttonRB = !digitalRead(Pin_ButtonRB);
 
-  XInput.setButton(BUTTON_A, !digitalRead(BUTTON_PINS[0]));
-  XInput.setButton(BUTTON_B, !digitalRead(BUTTON_PINS[1]));
-  XInput.setButton(BUTTON_X, !digitalRead(BUTTON_PINS[2]));
-  XInput.setButton(BUTTON_Y, !digitalRead(BUTTON_PINS[3]));
+  boolean buttonBack = !digitalRead(Pin_ButtonBack);
+  boolean buttonStart = !digitalRead(Pin_ButtonStart);
 
-  XInput.setButton(BUTTON_LB, !digitalRead(BUTTON_PINS[4]));
-  XInput.setButton(BUTTON_RB, !digitalRead(BUTTON_PINS[5]));
-  XInput.setTrigger(TRIGGER_LEFT, !digitalRead(BUTTON_PINS[6]));  // L2
-  XInput.setTrigger(TRIGGER_RIGHT, !digitalRead(BUTTON_PINS[7])); // R2
-  XInput.setButton(BUTTON_BACK, !digitalRead(BUTTON_PINS[8]));    // SELECT
-  XInput.setButton(BUTTON_START, !digitalRead(BUTTON_PINS[9]));
-  XInput.setButton(BUTTON_L3, !digitalRead(BUTTON_PINS[18]));
-  XInput.setButton(BUTTON_R3, !digitalRead(BUTTON_PINS[19]));
+  boolean buttonL3 = !digitalRead(Pin_ButtonL3);
+  boolean buttonR3 = !digitalRead(Pin_ButtonR3);
+
+  boolean dpadUp = !digitalRead(Pin_DpadUp);
+  boolean dpadDown = !digitalRead(Pin_DpadDown);
+  boolean dpadLeft = !digitalRead(Pin_DpadLeft);
+  boolean dpadRight = !digitalRead(Pin_DpadRight);
+
+  XInput.setButton(BUTTON_A, buttonA);
+  XInput.setButton(BUTTON_B, buttonB);
+  XInput.setButton(BUTTON_X, buttonX);
+  XInput.setButton(BUTTON_Y, buttonY);
+
+  XInput.setButton(BUTTON_LB, buttonLB);
+  XInput.setButton(BUTTON_RB, buttonRB);
+
+  XInput.setButton(BUTTON_BACK, buttonBack);
+  XInput.setButton(BUTTON_START, buttonStart);
+
+  XInput.setButton(BUTTON_L3, buttonL3);
+  XInput.setButton(BUTTON_R3, buttonR3);
+
+  XInput.setDpad(dpadUp, dpadDown, dpadLeft, dpadRight);
+
+  boolean triggerLeft = !digitalRead(Pin_TriggerL);
+  boolean triggerRight = !digitalRead(Pin_TriggerR);
+
+  XInput.setButton(TRIGGER_LEFT, triggerLeft);
+  XInput.setButton(TRIGGER_RIGHT, triggerRight);
 
   XInput.send();
-
-  delayMicroseconds(125); // 800
 }
