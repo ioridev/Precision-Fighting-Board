@@ -26,7 +26,7 @@ Copy x-input/ArduinoXinput_Teensy/teensy over to C:\Program Files (x86)\Arduino\
 - [x] 8000Hz Keyboard input
 - [x] 8000Hz X-input
 - [ ] Easy installer
-- [ ] Gameplay Testing
+- [X] Gameplay Testing
 - [ ] Wingman FGC Testing
 - [ ] Bounce
 
