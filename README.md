@@ -13,7 +13,7 @@ This project aims to develop the fastest game controller by utilizing the power 
 - High-speed USB communication using Teency 4.0
 - Targeting an impressive 8000Hz polling rate
 - Precise and instantaneous input response
-- Designed for ultimate gaming performance
+- X-input support
 
 ## Installation
 Install Arduino IDE 1.8.13 and Teensyduino 1.53.
