@@ -23,6 +23,8 @@ const int Pin_DpadRight = 13;
 const int Pin_TriggerL = A4;
 const int Pin_TriggerR = A5;
 
+#define BOUNCE_LOCK_OUT
+
 Bounce debouncerA = Bounce();
 Bounce debouncerB = Bounce();
 Bounce debouncerX = Bounce();
@@ -91,27 +93,27 @@ void setup()
   debouncerTriggerL.attach(Pin_TriggerL);
   debouncerTriggerR.attach(Pin_TriggerR);
 
-  debouncerA.interval(1);
-  debouncerB.interval(1);
-  debouncerX.interval(1);
-  debouncerY.interval(1);
+  debouncerA.interval(5);
+  debouncerB.interval(5);
+  debouncerX.interval(5);
+  debouncerY.interval(5);
 
-  debouncerLB.interval(1);
-  debouncerRB.interval(1);
+  debouncerLB.interval(5);
+  debouncerRB.interval(5);
 
-  debouncerBack.interval(1);
-  debouncerStart.interval(1);
+  debouncerBack.interval(5);
+  debouncerStart.interval(5);
 
-  debouncerL3.interval(1);
-  debouncerR3.interval(1);
+  debouncerL3.interval(5);
+  debouncerR3.interval(5);
 
-  debouncerDpadUp.interval(1);
-  debouncerDpadDown.interval(1);
-  debouncerDpadLeft.interval(1);
-  debouncerDpadRight.interval(1);
+  debouncerDpadUp.interval(5);
+  debouncerDpadDown.interval(5);
+  debouncerDpadLeft.interval(5);
+  debouncerDpadRight.interval(5);
 
-  debouncerTriggerL.interval(1);
-  debouncerTriggerR.interval(1);
+  debouncerTriggerL.interval(5);
+  debouncerTriggerR.interval(5);
 
   XInput.setAutoSend(false);
   XInput.begin();
