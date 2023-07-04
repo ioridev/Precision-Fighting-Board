@@ -34,8 +34,7 @@ For example, on the joystick interface you'll find these lines in teensy4/usb_de
 ## Todo
 - [x] 8000Hz d-input
 - [x] 8000Hz Keyboard input
-- [ ] 8000Hz X-input
-- [ ] d-input + Steam input 8000hz test
+- [x] 8000Hz X-input
 - [ ] Easy installer
 - [ ] Gameplay Testing
 - [ ] Wingman FGC Testing
