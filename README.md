@@ -28,6 +28,7 @@ Open PrecisionFightingBoard.ino with the Arduino IDE, go to Tools, change the US
 - [x] 8000Hz Keyboard input
 - [x] 8000Hz X-input
 - [ ] Easy installer
+- [ ] Easy setting (Bounce time,Input mode, etc...)
 - [X] Gameplay Testing
 - [ ] Wingman FGC Testing
 - [ ] Bounce
