@@ -16,9 +16,11 @@ This project aims to develop the fastest game controller by utilizing the power 
 - Designed for ultimate gaming performance
 
 ## Installation
-Install the Arduino IDE 1.8.13 and Teensyduino 1.53.
+Install Arduino IDE 1.8.13 and Teensyduino 1.53.
 
-Copy x-input/ArduinoXinput_Teensy/teensy over to C:\Program Files (x86)\Arduino\hardware　
+Clone this repository and copy the x-input/ArduinoXinput_Teensy/teensy directory to C:\Program Files (x86)\Arduino\hardware.
+
+Open PrecisionFightingBoard.ino with the Arduino IDE, go to Tools, change the USB Type to XInput, and then upload it to the Teensy 4.0.
 
 
 ## Todo
