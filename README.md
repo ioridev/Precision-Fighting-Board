@@ -32,7 +32,7 @@ Open PrecisionFightingBoard.ino with the Arduino IDE, go to Tools, change the US
 - [ ] Input mode setting
 - [X] Gameplay Testing
 - [ ] Wingman FGC Testing
-- [ ] Bounce
+- [x] Bounce
 
 
 ## Usage
