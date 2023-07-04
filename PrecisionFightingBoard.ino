@@ -1,4 +1,5 @@
 #include <XInput.h>
+#include <Bounce2.h>
 
 const int Pin_ButtonA = 0;
 const int Pin_ButtonB = 1;
@@ -22,12 +23,30 @@ const int Pin_DpadRight = 13;
 const int Pin_TriggerL = A4;
 const int Pin_TriggerR = A5;
 
+Bounce debouncerA = Bounce();
+Bounce debouncerB = Bounce();
+Bounce debouncerX = Bounce();
+Bounce debouncerY = Bounce();
+
+Bounce debouncerLB = Bounce();
+Bounce debouncerRB = Bounce();
+
+Bounce debouncerBack = Bounce();
+Bounce debouncerStart = Bounce();
+
+Bounce debouncerL3 = Bounce();
+Bounce debouncerR3 = Bounce();
+
+Bounce debouncerDpadUp = Bounce();
+Bounce debouncerDpadDown = Bounce();
+Bounce debouncerDpadLeft = Bounce();
+Bounce debouncerDpadRight = Bounce();
+
+Bounce debouncerTriggerL = Bounce();
+Bounce debouncerTriggerR = Bounce();
+
 void setup()
 {
-
-  pinMode(Pin_TriggerL, INPUT_PULLUP);
-  pinMode(Pin_TriggerR, INPUT_PULLUP);
-
   pinMode(Pin_ButtonA, INPUT_PULLUP);
   pinMode(Pin_ButtonB, INPUT_PULLUP);
   pinMode(Pin_ButtonX, INPUT_PULLUP);
@@ -47,31 +66,112 @@ void setup()
   pinMode(Pin_DpadLeft, INPUT_PULLUP);
   pinMode(Pin_DpadRight, INPUT_PULLUP);
 
-  XInput.setAutoSend(false);
+  pinMode(Pin_TriggerL, INPUT_PULLUP);
+  pinMode(Pin_TriggerR, INPUT_PULLUP);
 
+  debouncerA.attach(Pin_ButtonA);
+  debouncerB.attach(Pin_ButtonB);
+  debouncerX.attach(Pin_ButtonX);
+  debouncerY.attach(Pin_ButtonY);
+
+  debouncerLB.attach(Pin_ButtonLB);
+  debouncerRB.attach(Pin_ButtonRB);
+
+  debouncerBack.attach(Pin_ButtonBack);
+  debouncerStart.attach(Pin_ButtonStart);
+
+  debouncerL3.attach(Pin_ButtonL3);
+  debouncerR3.attach(Pin_ButtonR3);
+
+  debouncerDpadUp.attach(Pin_DpadUp);
+  debouncerDpadDown.attach(Pin_DpadDown);
+  debouncerDpadLeft.attach(Pin_DpadLeft);
+  debouncerDpadRight.attach(Pin_DpadRight);
+
+  debouncerTriggerL.attach(Pin_TriggerL);
+  debouncerTriggerR.attach(Pin_TriggerR);
+
+  debouncerA.interval(1);
+  debouncerB.interval(1);
+  debouncerX.interval(1);
+  debouncerY.interval(1);
+
+  debouncerLB.interval(1);
+  debouncerRB.interval(1);
+
+  debouncerBack.interval(1);
+  debouncerStart.interval(1);
+
+  debouncerL3.interval(1);
+  debouncerR3.interval(1);
+
+  debouncerDpadUp.interval(1);
+  debouncerDpadDown.interval(1);
+  debouncerDpadLeft.interval(1);
+  debouncerDpadRight.interval(1);
+
+  debouncerTriggerL.interval(1);
+  debouncerTriggerR.interval(1);
+
+  XInput.setAutoSend(false);
   XInput.begin();
 }
 
 void loop()
 {
-  boolean buttonA = !digitalRead(Pin_ButtonA);
-  boolean buttonB = !digitalRead(Pin_ButtonB);
-  boolean buttonX = !digitalRead(Pin_ButtonX);
-  boolean buttonY = !digitalRead(Pin_ButtonY);
+  debouncerA.update();
+  debouncerB.update();
+  debouncerX.update();
+  debouncerY.update();
 
-  boolean buttonLB = !digitalRead(Pin_ButtonLB);
-  boolean buttonRB = !digitalRead(Pin_ButtonRB);
+  debouncerLB.update();
+  debouncerRB.update();
 
-  boolean buttonBack = !digitalRead(Pin_ButtonBack);
-  boolean buttonStart = !digitalRead(Pin_ButtonStart);
+  debouncerBack.update();
+  debouncerStart.update();
 
-  boolean buttonL3 = !digitalRead(Pin_ButtonL3);
-  boolean buttonR3 = !digitalRead(Pin_ButtonR3);
+  debouncerL3.update();
+  debouncerR3.update();
 
-  boolean dpadUp = !digitalRead(Pin_DpadUp);
-  boolean dpadDown = !digitalRead(Pin_DpadDown);
-  boolean dpadLeft = !digitalRead(Pin_DpadLeft);
-  boolean dpadRight = !digitalRead(Pin_DpadRight);
+  debouncerDpadUp.update();
+  debouncerDpadDown.update();
+  debouncerDpadLeft.update();
+  debouncerDpadRight.update();
+
+  debouncerTriggerL.update();
+  debouncerTriggerR.update();
+
+  boolean buttonA = !debouncerA.read();
+  boolean buttonB = !debouncerB.read();
+  boolean buttonX = !debouncerX.read();
+  boolean buttonY = !debouncerY.read();
+
+  boolean buttonLB = !debouncerLB.read();
+  boolean buttonRB = !debouncerRB.read();
+
+  boolean buttonBack = !debouncerBack.read();
+  boolean buttonStart = !debouncerStart.read();
+
+  boolean buttonL3 = !debouncerL3.read();
+  boolean buttonR3 = !debouncerR3.read();
+
+  boolean dpadUp = !debouncerDpadUp.read();
+  boolean dpadDown = !debouncerDpadDown.read();
+  boolean dpadLeft = !debouncerDpadLeft.read();
+  boolean dpadRight = !debouncerDpadRight.read();
+
+  // SOCD Cleaning
+  if (dpadRight && dpadLeft)
+  {
+    dpadRight = false;
+    dpadLeft = false;
+  }
+
+  if (dpadUp && dpadDown)
+  {
+    dpadUp = false;
+    dpadDown = false;
+  }
 
   XInput.setButton(BUTTON_A, buttonA);
   XInput.setButton(BUTTON_B, buttonB);
@@ -87,22 +187,10 @@ void loop()
   XInput.setButton(BUTTON_L3, buttonL3);
   XInput.setButton(BUTTON_R3, buttonR3);
 
-  // SOCD
-  if (dpadRight && dpadLeft)
-  {
-    dpadRight = false;
-    dpadLeft = false;
-  }
-  if (dpadUp && dpadDown)
-  {
-    dpadUp = false;
-    dpadDown = false;
-  }
-
   XInput.setDpad(dpadUp, dpadDown, dpadLeft, dpadRight);
 
-  boolean triggerLeft = !digitalRead(Pin_TriggerL);
-  boolean triggerRight = !digitalRead(Pin_TriggerR);
+  boolean triggerLeft = !debouncerTriggerL.read();
+  boolean triggerRight = !debouncerTriggerR.read();
 
   XInput.setButton(TRIGGER_LEFT, triggerLeft);
   XInput.setButton(TRIGGER_RIGHT, triggerRight);
