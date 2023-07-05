@@ -16,6 +16,9 @@ This project aims to develop the fastest game controller by utilizing the power 
 - X-input support
 
 ## Installation
+Open the PrecisionFightingBoard.TEENSY40.hex file in Teensyduino and write to Teency 4.0.　
+
+## Setting Up the Development Environment
 Install Arduino IDE 1.8.13 and Teensyduino 1.53.
 
 Clone this repository and copy the x-input/ArduinoXinput_Teensy/teensy directory to C:\Program Files (x86)\Arduino\hardware.
