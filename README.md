@@ -34,7 +34,7 @@ The program used for the test is in Precision-Fighting-Board/x-input/tester and 
 - [x] 8000Hz d-input
 - [x] 8000Hz Keyboard input
 - [x] 8000Hz X-input
-- [ ] Easy installer
+- [x] Easy installer
 - [ ] Input mode setting
 - [X] Gameplay Testing
 - [ ] Wingman FGC Testing
