@@ -17,6 +17,25 @@ This project aims to develop the fastest game controller by utilizing the power 
 
 ## Installation
 Open the PrecisionFightingBoard.TEENSY40.hex file in Teensyduino and write to [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).　
+| Pin Number | Button      |
+|------------|-------------|
+| 0          | A           |
+| 1          | B           |
+| 2          | X           |
+| 3          | Y           |
+| 4          | LB          |
+| 5          | RB          |
+| 6          | Back        |
+| 7          | Start       |
+| 8          | L3          |
+| 9          | R3          |
+| 10         | Dpad Up     |
+| 11         | Dpad Down   |
+| 12         | Dpad Left   |
+| 13         | Dpad Right  |
+| A4         | Trigger L   |
+| A5         | Trigger R   |
+
 
 ## Setting Up the Development Environment
 Install Arduino IDE 1.8.13 and Teensyduino 1.53.
