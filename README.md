@@ -16,7 +16,7 @@ This project aims to develop the fastest game controller by utilizing the power 
 - X-input support
 
 ## Installation
-Open the PrecisionFightingBoard.TEENSY40.hex file in Teensyduino and write to [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).　
+Open the PrecisionFightingBoard.TEENSY40.hex file in [Teensyduino 1.53](https://www.pjrc.com/teensy/td_158/TeensyduinoInstall.exe) and write to [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).　
 | Pin Number | Button      |
 |------------|-------------|
 | 0          | A           |
