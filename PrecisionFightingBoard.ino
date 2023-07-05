@@ -93,6 +93,15 @@ void setup()
   debouncerTriggerL.attach(Pin_TriggerL);
   debouncerTriggerR.attach(Pin_TriggerR);
 
+  // When using the BOUNCE_LOCK_OUT mode, the debouncer.interval() method value does not affect the debouncing behavior.
+  // In the BOUNCE_LOCK_OUT mode, the library automatically uses a very short fixed delay, which is not configurable by the user.
+
+  // The debouncer.interval() method is used for setting the interval in other debouncing modes of the library (e.g., BOUNCE_INTERVAL).
+  // In these modes, the value set by the interval() method controls the amount of time for which the signal needs to be stable before it is considered as a valid state change.
+  // The higher the value, the longer it takes for the signal to be recognized.
+
+  // However, in the BOUNCE_LOCK_OUT mode, the value set by debouncer.interval() is ignored and the library uses a short fixed delay internally.
+  // This mode is aimed at optimizing button response speed with low latency.
   debouncerA.interval(1);
   debouncerB.interval(1);
   debouncerX.interval(1);
