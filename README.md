@@ -4,19 +4,19 @@
 
 ## Description
 
-This project aims to develop the fastest game controller by utilizing the power of Teency 4.0. We strive to achieve a polling rate of 8000Hz, delivering unparalleled responsiveness for an immersive gaming experience.
+This project aims to develop the fastest game controller by utilizing the power of [Teensy 4.0](https://www.pjrc.com/store/teensy40.html). We strive to achieve a polling rate of 8000Hz, delivering unparalleled responsiveness for an immersive gaming experience.
 
 **Note: This project is currently under development and not yet finalized.**  
 
 ## Features
 
-- High-speed USB communication using Teency 4.0
+- High-speed USB communication using [Teensy 4.0](https://www.pjrc.com/store/teensy40.html)
 - Targeting an impressive 8000Hz polling rate
 - Precise and instantaneous input response
 - X-input support
 
 ## Installation
-Open the PrecisionFightingBoard.TEENSY40.hex file in Teensyduino and write to Teency 4.0.　
+Open the PrecisionFightingBoard.TEENSY40.hex file in Teensyduino and write to [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).　
 
 ## Setting Up the Development Environment
 Install Arduino IDE 1.8.13 and Teensyduino 1.53.
