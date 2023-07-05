@@ -60,6 +60,7 @@ The program used for the test is in Precision-Fighting-Board/x-input/tester and 
 - [X] Gameplay Testing
 - [ ] Wingman FGC Testing
 - [x] Debounce
+- [ ] PS5 Support
 
 
 ## Contributing
