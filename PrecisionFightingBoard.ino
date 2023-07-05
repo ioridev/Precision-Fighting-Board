@@ -1,14 +1,4 @@
 
-// When using the BOUNCE_LOCK_OUT mode, the debouncer.interval() method value does not affect the debouncing behavior.
-// In the BOUNCE_LOCK_OUT mode, the library automatically uses a very short fixed delay, which is not configurable by the user.
-
-// The debouncer.interval() method is used for setting the interval in other debouncing modes of the library (e.g., BOUNCE_INTERVAL).
-// In these modes, the value set by the interval() method controls the amount of time for which the signal needs to be stable before it is considered as a valid state change.
-// The higher the value, the longer it takes for the signal to be recognized.
-
-// However, in the BOUNCE_LOCK_OUT mode, the value set by debouncer.interval() is ignored and the library uses a short fixed delay internally.
-// This mode is aimed at optimizing button response speed with low latency.
-
 #define BOUNCE_LOCK_OUT
 
 #include <XInput.h>
@@ -103,6 +93,28 @@ void setup()
 
   debouncerTriggerL.attach(Pin_TriggerL);
   debouncerTriggerR.attach(Pin_TriggerR);
+
+  debouncerA.interval(1);
+  debouncerB.interval(1);
+  debouncerX.interval(1);
+  debouncerY.interval(1);
+
+  debouncerLB.interval(1);
+  debouncerRB.interval(1);
+
+  debouncerBack.interval(1);
+  debouncerStart.interval(1);
+
+  debouncerL3.interval(1);
+  debouncerR3.interval(1);
+
+  debouncerDpadUp.interval(1);
+  debouncerDpadDown.interval(1);
+  debouncerDpadLeft.interval(1);
+  debouncerDpadRight.interval(1);
+
+  debouncerTriggerL.interval(1);
+  debouncerTriggerR.interval(1);
 
   XInput.setAutoSend(false);
   XInput.begin();
