@@ -34,7 +34,8 @@ Open the PrecisionFightingBoard.TEENSY40.hex file in Teensyduino and write to [T
 | 12         | Dpad Left   |
 | 13         | Dpad Right  |
 | A4         | Trigger L   |
-| A5         | Trigger R   |
+| A5         | Trigger R   |![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/2e11a9c7-5acc-4e2c-a961-7881e0bbd49f)
+
 
 
 ## Setting Up the Development Environment
