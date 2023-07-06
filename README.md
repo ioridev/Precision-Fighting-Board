@@ -48,15 +48,15 @@ Open PrecisionFightingBoard.ino with the Arduino IDE, go to Tools, change the US
 
 ## Polling rate test results 
 I caught the continuous X-input button loop in my Python program and confirmed that it was around 0.125 ms.
-![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/6ced8175-6371-4913-b4d4-1b409d2e88be)
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/70222125-6ffb-46e5-9fc4-e5550e8782d6)  
 The program used for the test is in Precision-Fighting-Board/x-input/tester and anyone can try it out.
 
 ## Comparison with PicoBoard
 tester/gamepad_response_time_comparison.py  
-Gamepad 1 is a gp2040-ce  
+Gamepad 1 is a gp2040-ce
 Gamepad 2 is a Precision-Fighting-Board.　　
 
-![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/a55c31c1-4e7f-4cea-b986-227c7850c3f4)
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/7a2c4f74-a8e7-45a2-8f9d-fd131651145c)
 
 ## Contributing
 
@@ -75,5 +75,4 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 ## Acknowledgements
 
 We would like to express our gratitude to the developers and contributors of Teency 4.0 for their amazing work and support.
-
 
