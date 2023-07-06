@@ -51,17 +51,12 @@ I caught the continuous X-input button loop in my Python program and confirmed t
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/70222125-6ffb-46e5-9fc4-e5550e8782d6)  
 The program used for the test is in Precision-Fighting-Board/x-input/tester and anyone can try it out.
 
-## Todo
-- [x] 8000Hz d-input
-- [x] 8000Hz Keyboard input
-- [x] 8000Hz X-input
-- [x] Easy installer
-- [ ] Input mode setting
-- [X] Gameplay Testing
-- [ ] Wingman FGC Testing
-- [x] Debounce
-- [ ] PS5 Support
+## Comparison with PicoBoard
+tester/gamepad_response_time_comparison.py  
+Gamepad 1 is a gp2040-ce
+Gamepad 2 is a Precision-Fighting-Board.　　
 
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/a55c31c1-4e7f-4cea-b986-227c7850c3f4)
 
 ## Contributing
 
