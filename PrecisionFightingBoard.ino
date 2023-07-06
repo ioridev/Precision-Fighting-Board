@@ -94,27 +94,27 @@ void setup()
   debouncerTriggerL.attach(Pin_TriggerL);
   debouncerTriggerR.attach(Pin_TriggerR);
 
-  debouncerA.interval(1);
-  debouncerB.interval(1);
-  debouncerX.interval(1);
-  debouncerY.interval(1);
+  debouncerA.interval(3);
+  debouncerB.interval(3);
+  debouncerX.interval(3);
+  debouncerY.interval(3);
 
-  debouncerLB.interval(1);
-  debouncerRB.interval(1);
+  debouncerLB.interval(3);
+  debouncerRB.interval(3);
 
-  debouncerBack.interval(1);
-  debouncerStart.interval(1);
+  debouncerBack.interval(3);
+  debouncerStart.interval(3);
 
-  debouncerL3.interval(1);
-  debouncerR3.interval(1);
+  debouncerL3.interval(3);
+  debouncerR3.interval(3);
 
-  debouncerDpadUp.interval(1);
-  debouncerDpadDown.interval(1);
-  debouncerDpadLeft.interval(1);
-  debouncerDpadRight.interval(1);
+  debouncerDpadUp.interval(3);
+  debouncerDpadDown.interval(3);
+  debouncerDpadLeft.interval(3);
+  debouncerDpadRight.interval(3);
 
-  debouncerTriggerL.interval(1);
-  debouncerTriggerR.interval(1);
+  debouncerTriggerL.interval(3);
+  debouncerTriggerR.interval(3);
 
   XInput.setAutoSend(false);
   XInput.begin();
