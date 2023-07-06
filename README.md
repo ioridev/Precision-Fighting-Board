@@ -48,7 +48,7 @@ Open PrecisionFightingBoard.ino with the Arduino IDE, go to Tools, change the US
 
 ## Polling rate test results 
 I caught the continuous X-input button loop in my Python program and confirmed that it was around 0.125 ms.
-![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/70222125-6ffb-46e5-9fc4-e5550e8782d6)  
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/6ced8175-6371-4913-b4d4-1b409d2e88be)
 The program used for the test is in Precision-Fighting-Board/x-input/tester and anyone can try it out.
 
 ## Comparison with PicoBoard
