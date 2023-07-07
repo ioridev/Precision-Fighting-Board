@@ -37,6 +37,12 @@ Open the PrecisionFightingBoard.TEENSY40.hex file in [Teensyduino 1.53](https://
 | A5         | Trigger R   |
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/2e11a9c7-5acc-4e2c-a961-7881e0bbd49f)
 
+### Tips
+Not good at soldering or making wires?　
+Some models are equipped with pins from the beginning, so you can skip this complicated process by using this type of wire and wire for Brook.
+
+  ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/a5d452a5-4a94-45a7-a2df-bc45aaffb0d8)
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/e8649edc-c55f-418c-af02-3ad79a4751af)
 
 
 ## Setting Up the Development Environment
