@@ -41,8 +41,9 @@ Open the PrecisionFightingBoard.TEENSY40.hex file in [Teensyduino 1.53](https://
 Not good at soldering or making wires?　
 Some models are equipped with pins from the beginning, so you can skip this complicated process by using this type of wire and wire for Brook.
 
-  ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/a5d452a5-4a94-45a7-a2df-bc45aaffb0d8)
-![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/e8649edc-c55f-418c-af02-3ad79a4751af)
+  ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/300528dc-192d-47a2-9785-b4b2bf61961f)
+
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/1cecc320-f41a-4cfc-9cd0-ea19618abd21)
 
 
 ## Setting Up the Development Environment
