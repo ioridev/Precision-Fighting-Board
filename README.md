@@ -40,6 +40,7 @@ Open the PrecisionFightingBoard.TEENSY40.hex file in [Teensyduino 1.53](https://
 ### Tips
 Not good at soldering or making wires?  
 Some models are equipped with pins from the beginning, so you can skip this complicated process by using this type of wire and wire for Brook.
+[Teensy 4.0 Pins](https://www.pjrc.com/store/teensy40_pins.html)
 
   ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/300528dc-192d-47a2-9785-b4b2bf61961f)
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/1cecc320-f41a-4cfc-9cd0-ea19618abd21)  
