@@ -62,10 +62,10 @@ The program used for the test is in Precision-Fighting-Board/x-input/tester and 
 
 ## Comparison with PicoBoard
 tester/gamepad_response_time_comparison.py  
-Gamepad 1 is a gp2040-ce
-Gamepad 2 is a Precision-Fighting-Board.　　
+Gamepad 1 is a Precision-Fighting-Board.
+Gamepad 2 is a gp2040-ce　
 
-![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/7a2c4f74-a8e7-45a2-8f9d-fd131651145c)
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/ea221707-1144-472a-874f-9012942adb8c)
 
 ## Contributing
 
