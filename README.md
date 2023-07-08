@@ -44,7 +44,8 @@ Some models are equipped with pins from the beginning, so you can skip this comp
 
   ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/300528dc-192d-47a2-9785-b4b2bf61961f)
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/1cecc320-f41a-4cfc-9cd0-ea19618abd21)  
-![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/c7bb9a22-68c5-4f2f-b32c-5b399d36c1a6)
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/c7bb9a22-68c5-4f2f-b32c-5b399d36c1a6)  
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/05e4e47d-face-4540-9af4-2c46e392f367)
 
 
 
