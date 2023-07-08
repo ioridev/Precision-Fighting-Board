@@ -47,7 +47,7 @@ Some models are equipped with pins from the beginning, so you can skip this comp
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/c7bb9a22-68c5-4f2f-b32c-5b399d36c1a6)  
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/05e4e47d-face-4540-9af4-2c46e392f367)
 
-
+One GND with a pin is missing, so it must be branched with a breadboard or similar.　
 
 ## Setting Up the Development Environment
 Install Arduino IDE 1.8.13 and Teensyduino 1.53.
