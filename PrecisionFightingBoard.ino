@@ -1,6 +1,3 @@
-
-#define BOUNCE_LOCK_OUT
-
 #include <XInput.h>
 #include <Bounce2.h>
 
