@@ -1,7 +1,7 @@
 # Precision-Fighting-Board
 ![FzeHbvuaQAE3pPj](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/afc0e35b-ca20-4fe8-9133-83550cd0358d)
 
-
+We all need to use this board in 20XX.
 ## Description
 
 This project aims to develop the fastest game controller by utilizing the power of [Teensy 4.0](https://www.pjrc.com/store/teensy40.html). We strive to achieve a polling rate of 8000Hz, delivering unparalleled responsiveness for an immersive gaming experience.
