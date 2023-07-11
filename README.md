@@ -56,12 +56,14 @@ Clone this repository and copy the x-input/ArduinoXinput_Teensy/teensy directory
 
 Open PrecisionFightingBoard.ino with the Arduino IDE, go to Tools, change the USB Type to XInput, and then upload it to the Teensy 4.0.
 
-## Polling rate test results 
+
+## benchmark
+### Polling rate test results 
 I caught the continuous X-input button loop in my Python program and confirmed that it was around 0.125 ms.
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/70222125-6ffb-46e5-9fc4-e5550e8782d6)  
 The program used for the test is in Precision-Fighting-Board/x-input/tester and anyone can try it out.
 
-## Comparison with PicoBoard
+### Comparison with PicoBoard
 tester/gamepad_response_time_comparison.py  
 Gamepad 1 is a Precision-Fighting-Board.
 Gamepad 2 is a gp2040-ce　
