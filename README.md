@@ -68,7 +68,13 @@ tester/gamepad_response_time_comparison.py
 Gamepad 1 is a Precision-Fighting-Board.
 Gamepad 2 is a gp2040-ce　
 
-![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/ea221707-1144-472a-874f-9012942adb8c)
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/ea221707-1144-472a-874f-9012942adb8c)  
+
+
+### With WingmanFGC  
+This is a test on a PC, but when used with WingmanFGC.  
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/9faed4c7-3016-4b31-b0da-01b3768ef684)  
+Good results with input lag of up to 5 ms.　
 
 ## Contributing
 
