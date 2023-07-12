@@ -14,6 +14,7 @@ This project aims to develop the fastest game controller by utilizing the power 
 - Targeting an impressive 8000Hz polling rate
 - Precise and instantaneous input response
 - X-input support
+- No waiting time for debounce
 
 ## Installation
 Open the PrecisionFightingBoard.TEENSY40.hex file in [Teensyduino 1.53](https://www.pjrc.com/teensy/td_158/TeensyduinoInstall.exe) and write to [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).　
