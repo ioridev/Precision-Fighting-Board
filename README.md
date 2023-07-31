@@ -48,7 +48,13 @@ Some models are equipped with pins from the beginning, so you can skip this comp
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/c7bb9a22-68c5-4f2f-b32c-5b399d36c1a6)  
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/05e4e47d-face-4540-9af4-2c46e392f367)
 
-One GND with a pin is missing, so it must be branched with a breadboard or similar.　
+One GND with a pin is missing, so it must be branched with a breadboard or similar.　 
+
+  
+Or you can purchase Breakout Board on Amazon.  
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/46e5d4a0-9250-4f9b-95c1-419c1af4948c)  
+[Breakout Board for Teensy 4.0](https://www.amazon.com/dp/B0C5SXFTC1?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_3P4ZTVVE18NE8B7TW8SG)
+  
 
 ## Setting Up the Development Environment
 Install Arduino IDE 1.8.13 and Teensyduino 1.53.
