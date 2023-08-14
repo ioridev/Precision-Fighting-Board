@@ -20,8 +20,6 @@ const int Pin_DpadDown = 11;
 const int Pin_DpadLeft = 12;
 const int Pin_DpadRight = 13;
 
-const int Pin_ButtonXbox = 14;
-
 const int Pin_TriggerL = A4;
 const int Pin_TriggerR = A5;
 
@@ -47,8 +45,6 @@ Bounce debouncerDpadRight = Bounce();
 Bounce debouncerTriggerL = Bounce();
 Bounce debouncerTriggerR = Bounce();
 
-Bounce debouncerXbox = Bounce();
-
 void setup()
 {
   pinMode(Pin_ButtonA, INPUT_PULLUP);
@@ -73,8 +69,6 @@ void setup()
   pinMode(Pin_TriggerL, INPUT_PULLUP);
   pinMode(Pin_TriggerR, INPUT_PULLUP);
 
-pinMode(Pin_ButtonXbox, INPUT_PULLUP);
-
   debouncerA.attach(Pin_ButtonA);
   debouncerB.attach(Pin_ButtonB);
   debouncerX.attach(Pin_ButtonX);
@@ -97,9 +91,6 @@ pinMode(Pin_ButtonXbox, INPUT_PULLUP);
   debouncerTriggerL.attach(Pin_TriggerL);
   debouncerTriggerR.attach(Pin_TriggerR);
 
-  debouncerXbox.attach(Pin_ButtonXbox);
-
-
   debouncerA.interval(3);
   debouncerB.interval(3);
   debouncerX.interval(3);
@@ -121,8 +112,6 @@ pinMode(Pin_ButtonXbox, INPUT_PULLUP);
 
   debouncerTriggerL.interval(3);
   debouncerTriggerR.interval(3);
-
-debouncerXbox.interval(3);
 
   XInput.setAutoSend(false);
   XInput.begin();
@@ -152,8 +141,6 @@ void loop()
   debouncerTriggerL.update();
   debouncerTriggerR.update();
 
-  debouncerXbox.update();
-
   boolean buttonA = !debouncerA.read();
   boolean buttonB = !debouncerB.read();
   boolean buttonX = !debouncerX.read();
@@ -172,8 +159,6 @@ void loop()
   boolean dpadDown = !debouncerDpadDown.read();
   boolean dpadLeft = !debouncerDpadLeft.read();
   boolean dpadRight = !debouncerDpadRight.read();
-
-  boolean buttonXbox = !debouncerXbox.read();
 
   // SOCD Cleaning
   if (dpadRight && dpadLeft)
@@ -209,8 +194,6 @@ void loop()
 
   XInput.setButton(TRIGGER_LEFT, triggerLeft);
   XInput.setButton(TRIGGER_RIGHT, triggerRight);
-
-  XInput.setButton(BUTTON_LOGO, buttonXbox);
 
   XInput.send();
 }
