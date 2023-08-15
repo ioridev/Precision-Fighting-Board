@@ -33,7 +33,7 @@ Open the PrecisionFightingBoard.TEENSY40.hex file in [Teensyduino 1.53](https://
 | 10         | Dpad Up     |
 | 11         | Dpad Down   |
 | 12         | Dpad Left   |
-| 13         | Dpad Right  |
+| 15         | Dpad Right  |
 | 14         | Xbox  |
 | A4         | Trigger L   |
 | A5         | Trigger R   |
