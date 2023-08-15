@@ -18,7 +18,7 @@ const int Pin_ButtonR3 = 9;
 const int Pin_DpadUp = 10;
 const int Pin_DpadDown = 11;
 const int Pin_DpadLeft = 12;
-const int Pin_DpadRight = 13;
+const int Pin_DpadRight = 15;
 
 const int Pin_ButtonXbox = 14;
 
