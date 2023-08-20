@@ -1,29 +1,29 @@
 #include <XInput.h>
 #include <Bounce2.h>
 
-const int Pin_ButtonA = 0;
-const int Pin_ButtonB = 1;
-const int Pin_ButtonX = 2;
-const int Pin_ButtonY = 3;
+const int Pin_ButtonA = 11;
+const int Pin_ButtonB = 12;
+const int Pin_ButtonX = 8;
+const int Pin_ButtonY = 7;
 
-const int Pin_ButtonLB = 4;
-const int Pin_ButtonRB = 5;
+const int Pin_ButtonLB = 10;
+const int Pin_ButtonRB = 9;
 
-const int Pin_ButtonBack = 6;
-const int Pin_ButtonStart = 7;
+const int Pin_ButtonBack = 5;
+const int Pin_ButtonStart = 6;
 
-const int Pin_ButtonL3 = 8;
-const int Pin_ButtonR3 = 9;
+const int Pin_ButtonL3 =  18;
+const int Pin_ButtonR3 = 19;
 
-const int Pin_DpadUp = 10;
-const int Pin_DpadDown = 11;
-const int Pin_DpadLeft = 12;
-const int Pin_DpadRight = 15;
+const int Pin_DpadUp = 0;
+const int Pin_DpadDown = 1;
+const int Pin_DpadLeft = 2;
+const int Pin_DpadRight = 3;
 
-const int Pin_ButtonXbox = 14;
+const int Pin_ButtonXbox = 4;
 
-const int Pin_TriggerL = A4;
-const int Pin_TriggerR = A5;
+const int Pin_TriggerL = 14;
+const int Pin_TriggerR = 15;
 
 Bounce debouncerA = Bounce();
 Bounce debouncerB = Bounce();
