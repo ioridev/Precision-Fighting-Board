@@ -90,15 +90,6 @@ Gamepad 1 is a Precision-Fighting-Board with WingmanFGC.
 Gamepad 2 is a gp2040-ce  
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/9faed4c7-3016-4b31-b0da-01b3768ef684)  
 Good results with input lag of up to 5 ms.　　　
-## Limitations
-
-### No Console Support
-
-This will *not* enable you to use your Teensy with an Xbox console! Genuine controllers use a dedicated hardware security chip that handshakes with the console. The Teensy boards do not have this chip, and its security method has not been (openly) broken.
-
-### No Commercial Use
-
-These board definitions make use of Microsoft's VID and PID in order to latch on to the PC driver. As such this is strictly for educational or development use by non-commercial entities.
 
 
 ## Contributing
