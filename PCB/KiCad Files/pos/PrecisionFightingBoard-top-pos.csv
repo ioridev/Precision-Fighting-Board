@@ -1,0 +1,10 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"J1","Conn_01x04_Male","JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical",73.660000,-59.500000,-90.000000,top
+"J2","Screw_Terminal_01x04","TerminalBlock_MetzConnect_Type059_RT06304HBWC_1x04_P3.50mm_Horizontal",133.660000,-81.280000,0.000000,top
+"J3","Conn_01x14_Socket","PinSocket_1x14_P2.54mm_Vertical",160.020000,-58.420000,-90.000000,top
+"J4","Conn_01x14_Socket","PinSocket_1x14_P2.54mm_Vertical",160.020000,-73.660000,-90.000000,top
+"J6","Conn_02x10_Odd_Even","PinHeader_2x10_P2.54mm_Vertical",106.680000,-81.280000,-90.000000,top
+"J7","ST01x05","TerminalBlock_MetzConnect_Type059_RT06305HBWC_1x05_P3.50mm_Horizontal",152.400000,-48.260000,180.000000,top
+"J8","ST01x05","TerminalBlock_MetzConnect_Type059_RT06305HBWC_1x05_P3.50mm_Horizontal",134.665600,-48.209200,180.000000,top
+"J9","ST01x05","TerminalBlock_MetzConnect_Type059_RT06305HBWC_1x05_P3.50mm_Horizontal",116.840000,-48.260000,180.000000,top
+"J10","ST01x05","TerminalBlock_MetzConnect_Type059_RT06305HBWC_1x05_P3.50mm_Horizontal",98.851600,-48.310800,180.000000,top
