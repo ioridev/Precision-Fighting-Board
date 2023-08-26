@@ -21,23 +21,23 @@ This project aims to develop the fastest game controller by utilizing the power 
 Open the PrecisionFightingBoard.TEENSY40.hex file in [Teensyduino 1.53](https://www.pjrc.com/teensy/td_158/TeensyduinoInstall.exe) and write to [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).　
 | Pin Number | Button      |
 |------------|-------------|
-| 0          | A           |
-| 1          | B           |
-| 2          | X           |
-| 3          | Y           |
-| 4          | LB          |
-| 5          | RB          |
-| 6          | Back        |
-| 7          | Start       |
-| 8          | L3          |
-| 9          | R3          |
-| 10         | Dpad Up     |
-| 11         | Dpad Down   |
-| 12         | Dpad Left   |
-| 15         | Dpad Right  |
-| 14         | Xbox  |
-| A4         | Trigger L   |
-| A5         | Trigger R   |
+| 0          | Up       |
+| 1          | Down   |
+| 2          | Left      |
+| 3          | Right    |
+| 4          | Home   |
+| 5          | Back     |
+| 6          | Start     |
+| 7          | Y           |
+| 8          | X           |
+| 9          | RB         |
+| 10         | LB         |
+| 11         | A            |
+| 12         | B            |
+| 14         | RT         |
+| 15         | LT          |
+| 18         | L3          |
+| 19         | R3          |
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/2e11a9c7-5acc-4e2c-a961-7881e0bbd49f)
 
 ### Tips
@@ -91,15 +91,6 @@ Gamepad 1 is a Precision-Fighting-Board with WingmanFGC.
 Gamepad 2 is a gp2040-ce  
 ![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/9faed4c7-3016-4b31-b0da-01b3768ef684)  
 Good results with input lag of up to 5 ms.　　　
-## Limitations
-
-### No Console Support
-
-This will *not* enable you to use your Teensy with an Xbox console! Genuine controllers use a dedicated hardware security chip that handshakes with the console. The Teensy boards do not have this chip, and its security method has not been (openly) broken.
-
-### No Commercial Use
-
-These board definitions make use of Microsoft's VID and PID in order to latch on to the PC driver. As such this is strictly for educational or development use by non-commercial entities.
 
 
 ## Contributing
