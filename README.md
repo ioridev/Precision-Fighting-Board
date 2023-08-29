@@ -1,5 +1,5 @@
 # Precision-Fighting-Board
-![board](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/a123b555-bbeb-47cf-a976-164e9d518c5a)
+![board](https://github.com/ioridev/Precision-Fighting-Board/blob/main/PCB/KiCad%20Files/PrecisionFightingBoard.jpg)
 
 We all need to use this board in 20XX.  
 [Discussions](https://github.com/ioridev/Precision-Fighting-Board/discussions)  
