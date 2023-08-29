@@ -759,7 +759,7 @@
 
   (footprint "TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type059_RT06305HBWC_1x05_P3.50mm_Horizontal" (layer "F.Cu")
     (tstamp 4c54d334-f7ba-46e2-a1d9-1f15384f1f5b)
-    (at 98.8516 48.3108 180)
+    (at 99 48.3108 180)
     (descr "terminal block Metz Connect Type059_RT06305HBWC, 5 pins, pitch 3.5mm, size 17.5x6.5mm^2, drill diamater 1.2mm, pad diameter 2.3mm, see http://www.metz-connect.com/de/system/files/productfiles/Datenblatt_310591_RT063xxHBWC_OFF-022684T.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_MetzConnect")
     (tags "THT terminal block Metz Connect Type059_RT06305HBWC pitch 3.5mm size 17.5x6.5mm^2 drill 1.2mm pad 2.3mm")
     (property "Sheetfile" "PrecisionFightingBoard.kicad_sch")
@@ -1491,7 +1491,7 @@
 
   (footprint "TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type059_RT06305HBWC_1x05_P3.50mm_Horizontal" (layer "F.Cu")
     (tstamp eb552fb2-77d5-4ab6-adb8-ae52fb228cb0)
-    (at 152.4 48.26 180)
+    (at 152.5 48.26 180)
     (descr "terminal block Metz Connect Type059_RT06305HBWC, 5 pins, pitch 3.5mm, size 17.5x6.5mm^2, drill diamater 1.2mm, pad diameter 2.3mm, see http://www.metz-connect.com/de/system/files/productfiles/Datenblatt_310591_RT063xxHBWC_OFF-022684T.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_MetzConnect")
     (tags "THT terminal block Metz Connect Type059_RT06305HBWC pitch 3.5mm size 17.5x6.5mm^2 drill 1.2mm pad 2.3mm")
     (property "Sheetfile" "PrecisionFightingBoard.kicad_sch")
