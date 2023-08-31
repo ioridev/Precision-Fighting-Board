@@ -1,5 +1,12 @@
 #include <XInput.h>
 #include <Bounce2.h>
+#include <EEPROM.h>
+
+bool isMappingMode = false; 
+
+const int EEPROM_ADDRESS_A = 0;
+const int EEPROM_ADDRESS_B = 1;
+
 
 const int Pin_ButtonA = 11;
 const int Pin_ButtonB = 12;
@@ -123,6 +130,9 @@ pinMode(Pin_ButtonXbox, INPUT_PULLUP);
   debouncerTriggerR.interval(3);
 
 debouncerXbox.interval(3);
+ if (!digitalRead(Pin_ButtonBack)) {
+        isMappingMode = true;
+    }
 
   XInput.setAutoSend(false);
   XInput.begin();
@@ -130,6 +140,14 @@ debouncerXbox.interval(3);
 
 void loop()
 {
+  if (isMappingMode) {
+        if (Serial.available()) {
+           Serial.begin(9600);
+        Serial.println("Mapping mode");
+           String data = Serial.readStringUntil('\n');
+            parseAndApplyCommand(data);
+        }
+    } else {
   debouncerA.update();
   debouncerB.update();
   debouncerX.update();
@@ -213,4 +231,21 @@ void loop()
   XInput.setButton(BUTTON_LOGO, buttonXbox);
 
   XInput.send();
+    }
+}
+
+void parseAndApplyCommand(String cmd) {
+    char button = cmd.charAt(0);
+    int pin = cmd.substring(2).toInt();
+
+    switch (button) {
+        case 'A':
+             EEPROM.write(EEPROM_ADDRESS_A, pin);  
+            break;
+        case 'B':
+             EEPROM.write(EEPROM_ADDRESS_B, pin);
+        default:
+            Serial.println("Unknown command");
+            break;
+    }
 }
