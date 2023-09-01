@@ -1,7 +1,7 @@
 #include <MPG.h>
 
 
-class Gamepad {
+class Gamepad : public MPG  {
 public:
 	Gamepad(int debounceMS = 5);
 public:
