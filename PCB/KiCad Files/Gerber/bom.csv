@@ -1,0 +1,7 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"H1, H2, H3, H4",MountingHole_3.5mm,4,MountingHole,
+J1,JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical,1,Conn_01x04_Male,
+"J10, J7, J8, J9",TerminalBlock_MetzConnect_Type059_RT06305HBWC_1x05_P3.50mm_Horizontal,4,ST01x05,
+J5,TerminalBlock_MetzConnect_Type059_RT06303HBWC_1x03_P3.50mm_Horizontal,1,Screw_Terminal_01x03,
+J6,PinHeader_2x10_P2.54mm_Vertical,1,Conn_02x10_Odd_Even,
+U1,Teensy40,1,Teensy4.0,
