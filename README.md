@@ -8,7 +8,7 @@ We all need to use this board in 20XX.
 This project aims to develop the fastest game controller by utilizing the power of [Teensy 4.0](https://www.pjrc.com/store/teensy40.html). We strive to achieve a polling rate of 8000Hz, delivering unparalleled responsiveness for an immersive gaming experience.
 
 ## Where to Buy
-![Booth](https://asset.booth.pm/assets/booth_logo-cd38e1da31e93676b081bd8f0aca2805f758f514c8e95dc3f1a8aac5e58dffec.svg)  
+[![Booth](https://asset.booth.pm/assets/booth_logo-cd38e1da31e93676b081bd8f0aca2805f758f514c8e95dc3f1a8aac5e58dffec.svg)](https://iori-giken.booth.pm/)  
 Available for purchase on Booth. Buying from this shop directly supports the developers. For international customers, shipping outside of Japan is possible using address forwarding services like Buyee and Tenso.  
 [https://iori-giken.booth.pm/](https://iori-giken.booth.pm/)
 
