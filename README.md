@@ -10,6 +10,8 @@ This project aims to develop the fastest game controller by utilizing the power 
 ## Where to Buy
 [![Booth](https://asset.booth.pm/assets/booth_logo-cd38e1da31e93676b081bd8f0aca2805f758f514c8e95dc3f1a8aac5e58dffec.svg)](https://iori-giken.booth.pm/)  
 Available for purchase on Booth. Buying from this shop directly supports the developers. For international customers, shipping outside of Japan is possible using address forwarding services like Buyee and Tenso.  
+![image](https://github.com/ioridev/Precision-Fighting-Board/assets/41247249/3c6b4f0f-4295-4715-977d-033639ead45e)
+
 [https://iori-giken.booth.pm/](https://iori-giken.booth.pm/)
 
 
