@@ -25,6 +25,30 @@ const int Pin_ButtonXbox = 4;
 const int Pin_TriggerL = 14;
 const int Pin_TriggerR = 15;
 
+Bounce debouncerA = Bounce();
+Bounce debouncerB = Bounce();
+Bounce debouncerX = Bounce();
+Bounce debouncerY = Bounce();
+
+Bounce debouncerLB = Bounce();
+Bounce debouncerRB = Bounce();
+
+Bounce debouncerBack = Bounce();
+Bounce debouncerStart = Bounce();
+
+Bounce debouncerL3 = Bounce();
+Bounce debouncerR3 = Bounce();
+
+Bounce debouncerDpadUp = Bounce();
+Bounce debouncerDpadDown = Bounce();
+Bounce debouncerDpadLeft = Bounce();
+Bounce debouncerDpadRight = Bounce();
+
+Bounce debouncerTriggerL = Bounce();
+Bounce debouncerTriggerR = Bounce();
+
+Bounce debouncerXbox = Bounce();
+
 void setup()
 {
   pinMode(Pin_ButtonA, INPUT_PULLUP);
