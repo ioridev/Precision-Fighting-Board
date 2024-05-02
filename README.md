@@ -1,4 +1,4 @@
-# Precision-Fighting-Board
+# [Precision-Fighting-Board](https://github.com/ioridev/Precision-Fighting-Board)
 ![board](https://github.com/ioridev/Precision-Fighting-Board/blob/main/PCB/KiCad%20Files/PrecisionFightingBoard.jpg)
 
 We all need to use this board in 20XX.  
