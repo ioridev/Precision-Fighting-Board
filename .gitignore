@@ -10,3 +10,5 @@ PCB/KiCad Files/fp-info-cache
 .vscode/launch.json
 .vscode/ipch
 .specstory/*
+.cursorrules
+.clinerules
