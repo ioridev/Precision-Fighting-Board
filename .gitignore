@@ -9,3 +9,4 @@ PCB/KiCad Files/fp-info-cache
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+.specstory/*
