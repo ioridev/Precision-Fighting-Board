@@ -5,14 +5,17 @@ namespace {
 
 constexpr int kHallKeyCount = 4;
 constexpr int kHallPins[kHallKeyCount] = {14, 15, 16, 17};
-constexpr float kHallTriggerRatio = 0.05f;   // 0.2 mm / 4 mm travel
-constexpr float kHallReleaseRatio = 0.10f;   // 0.4 mm / 4 mm travel
-constexpr int kHallCalibrationSamples = 200;
-constexpr int kHallCalibrationDelayMs = 1;
-constexpr int kHallMinimumRange = 60;
-constexpr int kHallDefaultRange = 160;
-constexpr int kHallMinimumTrigger = 6;
-constexpr int kHallReleaseSeparation = 4;
+constexpr int kHallBaselineSamples = 128;
+constexpr int kHallSampleDelayMs = 1;
+constexpr int kHallFilterWindow = 8;
+constexpr int kHallNoiseMargin = 60;
+constexpr int kHallMinStrokeCounts = 200;
+constexpr int kHallDefaultTriggerDelta = 220;
+constexpr int kHallDefaultReleaseDelta = 180;
+
+constexpr float kHallTravelMm[kHallKeyCount] = {4.0f, 4.0f, 4.0f, 4.0f};
+constexpr float kHallTriggerMm[kHallKeyCount] = {0.2f, 0.2f, 0.2f, 0.2f};
+constexpr float kHallReleaseMm[kHallKeyCount] = {0.4f, 0.4f, 0.4f, 0.4f};
 
 enum HallDirection {
   HallUp = 0,
@@ -23,114 +26,84 @@ enum HallDirection {
 
 struct HallKey {
   int pin;
-  int minValue;
-  int maxValue;
-  int trigger;
-  int release;
-  int value;
-  int reference;
+  uint8_t index;
+  int baseline;
+  int filtered;
   bool pressed;
-  bool hasFullTravel;
+  bool calibrated;
+  int strokeMin;
+  int triggerDelta;
+  int releaseDelta;
 };
 
 HallKey hallKeys[kHallKeyCount];
 
-void updateHallThresholds(HallKey &key) {
-  int range = key.maxValue - key.minValue;
-  if (range < kHallMinimumRange) {
-    range = key.hasFullTravel ? kHallMinimumRange : kHallDefaultRange;
+void calibrateHallKey(HallKey &key) {
+  long accumulator = 0;
+  for (int i = 0; i < kHallBaselineSamples; ++i) {
+    accumulator += analogRead(key.pin);
+    delay(kHallSampleDelayMs);
   }
 
-  int trigger = static_cast<int>(range * kHallTriggerRatio);
-  if (trigger < kHallMinimumTrigger) {
-    trigger = kHallMinimumTrigger;
-  }
-
-  int release = static_cast<int>(range * kHallReleaseRatio);
-  if (release <= trigger) {
-    release = trigger + kHallReleaseSeparation;
-  }
-
-  if (release > range) {
-    release = range;
-  }
-
-  key.trigger = trigger;
-  key.release = release;
-}
-
-void initHallKey(int index) {
-  HallKey &key = hallKeys[index];
-  key.pin = kHallPins[index];
-  pinMode(key.pin, INPUT);
-
-  int minValue = 4095;
-  int maxValue = 0;
-
-  for (int i = 0; i < kHallCalibrationSamples; ++i) {
-    int reading = analogRead(key.pin);
-    if (reading < minValue) {
-      minValue = reading;
-    }
-    if (reading > maxValue) {
-      maxValue = reading;
-    }
-    delay(kHallCalibrationDelayMs);
-  }
-
-  key.minValue = minValue;
-  key.maxValue = maxValue;
-  key.reference = maxValue;
-  key.value = maxValue;
+  key.baseline = accumulator / kHallBaselineSamples;
+  key.filtered = key.baseline;
   key.pressed = false;
-  key.hasFullTravel = false;
-
-  const int cushion = (maxValue - minValue) * 2;
-  key.minValue = max(0, key.minValue - cushion);
-  key.maxValue = min(4095, key.maxValue + cushion);
-  key.reference = key.maxValue;
-
-  updateHallThresholds(key);
+  key.calibrated = false;
+  key.strokeMin = key.baseline;
+  key.triggerDelta = kHallDefaultTriggerDelta;
+  key.releaseDelta = kHallDefaultReleaseDelta;
 }
 
-void initHallKeys() {
+void calibrateHallKeys() {
   for (int i = 0; i < kHallKeyCount; ++i) {
-    initHallKey(i);
-  }
-}
-
-void balanceHallKey(HallKey &key) {
-  if (key.pressed) {
-    if (key.value < key.minValue) {
-      key.minValue = key.value;
-      key.hasFullTravel = true;
-      updateHallThresholds(key);
-    }
-  } else {
-    if (key.value > key.maxValue) {
-      key.maxValue = key.value;
-      key.reference = key.maxValue;
-      updateHallThresholds(key);
-    }
-    if (key.value < key.minValue) {
-      key.minValue = key.value;
-      updateHallThresholds(key);
-    }
+    HallKey &key = hallKeys[i];
+    key.pin = kHallPins[i];
+    key.index = static_cast<uint8_t>(i);
+    pinMode(key.pin, INPUT);
+    calibrateHallKey(key);
   }
 }
 
 bool processHallKey(HallKey &key) {
-  key.value = analogRead(key.pin);
-  balanceHallKey(key);
+  int reading = analogRead(key.pin);
+  key.filtered = ((key.filtered * (kHallFilterWindow - 1)) + reading) / kHallFilterWindow;
 
   if (!key.pressed) {
-    if (key.value <= key.reference - key.trigger) {
+    if (key.filtered <= key.baseline - key.triggerDelta) {
       key.pressed = true;
+      key.strokeMin = key.filtered;
+    } else {
+      key.strokeMin = key.baseline;
     }
   } else {
-    if (key.value >= key.reference - key.release) {
+    if (key.filtered >= key.baseline - key.releaseDelta) {
       key.pressed = false;
-      key.reference = key.maxValue;
+      if (!key.calibrated) {
+        int strokeDepth = key.baseline - key.strokeMin;
+        if (strokeDepth >= kHallMinStrokeCounts) {
+          float countsPerMm = strokeDepth / kHallTravelMm[key.index];
+          int trigger = static_cast<int>(countsPerMm * kHallTriggerMm[key.index] + kHallNoiseMargin);
+          int release = static_cast<int>(countsPerMm * kHallReleaseMm[key.index] + kHallNoiseMargin / 2);
+          if (trigger < kHallDefaultTriggerDelta) {
+            trigger = kHallDefaultTriggerDelta;
+          }
+          if (release >= trigger) {
+            release = trigger - kHallNoiseMargin / 2;
+          }
+          if (release < kHallDefaultReleaseDelta / 2) {
+            release = kHallDefaultReleaseDelta / 2;
+          }
+          key.triggerDelta = trigger;
+          key.releaseDelta = release;
+          key.calibrated = true;
+          key.strokeMin = key.baseline;
+        } else {
+          key.strokeMin = key.baseline;
+        }
+      }
+    }
+    if (key.filtered < key.strokeMin) {
+      key.strokeMin = key.filtered;
     }
   }
 
@@ -249,7 +222,7 @@ void setup()
   debouncerXbox.interval(3);
 
   analogReadResolution(12);
-  initHallKeys();
+  calibrateHallKeys();
 
   XInput.setAutoSend(false);
   XInput.begin();
