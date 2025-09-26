@@ -3,19 +3,19 @@
 
 namespace {
 
-constexpr int kHallKeyCount = 4;
-constexpr int kHallPins[kHallKeyCount] = {14, 15, 16, 17};
-constexpr int kHallBaselineSamples = 128;
-constexpr int kHallSampleDelayMs = 1;
-constexpr int kHallFilterWindow = 8;
-constexpr int kHallNoiseMargin = 60;
-constexpr int kHallMinStrokeCounts = 200;
-constexpr int kHallDefaultTriggerDelta = 220;
-constexpr int kHallDefaultReleaseDelta = 180;
+constexpr int kHallKeyCount = 4; // 上下左右の4方向のみを監視するため4個
+constexpr int kHallPins[kHallKeyCount] = {14, 15, 16, 17}; // Teensy 4.x のA0〜A3を移動キーに割り当て済み
+constexpr int kHallBaselineSamples = 128; // 起動時に約128msかけてアイドル電圧を平均化し安定値を得る
+constexpr int kHallSampleDelayMs = 1; // サンプル間隔を1msにして電源ノイズを平均化
+constexpr int kHallFilterWindow = 8; // 8サンプルの移動平均で瞬間ノイズを平滑化
+constexpr int kHallNoiseMargin = 60; // ロガーで確認した±50程度のゆらぎに安全マージン10を足した閾値
+constexpr int kHallMinStrokeCounts = 200; // フルストローク判定を200カウント以上にして、有意な押下のみ学習
+constexpr int kHallDefaultTriggerDelta = 220; // まだ学習前でもノイズに負けない固定閾値（約0.2mm相当）
+constexpr int kHallDefaultReleaseDelta = 180; // リリースはトリガより少し小さい差分で戻りを保証
 
-constexpr float kHallTravelMm[kHallKeyCount] = {4.0f, 4.0f, 4.0f, 4.0f};
-constexpr float kHallTriggerMm[kHallKeyCount] = {0.2f, 0.2f, 0.2f, 0.2f};
-constexpr float kHallReleaseMm[kHallKeyCount] = {0.4f, 0.4f, 0.4f, 0.4f};
+constexpr float kHallTravelMm[kHallKeyCount] = {4.0f, 4.0f, 4.0f, 4.0f}; // 設計上の可動距離4mmを方向別に設定
+constexpr float kHallTriggerMm[kHallKeyCount] = {0.2f, 0.2f, 0.2f, 0.2f}; // 0.2mmでオンにしたい要求仕様
+constexpr float kHallReleaseMm[kHallKeyCount] = {0.4f, 0.4f, 0.4f, 0.4f}; // 0.4mmまで戻ったらオフにするためのヒステリシス
 
 enum HallDirection {
   HallUp = 0,
@@ -118,29 +118,29 @@ void updateHallKeys() {
 
 } // namespace
 
-const int Pin_ButtonA = 11;
-const int Pin_ButtonB = 12;
-const int Pin_ButtonX = 8;
-const int Pin_ButtonY = 7;
+const int Pin_ButtonA = 11; // 基板上でAボタンがTeensyピン11へ配線されている
+const int Pin_ButtonB = 12; // Bボタン信号がピン12に配線されている
+const int Pin_ButtonX = 8; // Xボタンはピン8に引き出されている
+const int Pin_ButtonY = 7; // Yボタンはピン7に割り当て
 
-const int Pin_ButtonLB = 10;
-const int Pin_ButtonRB = 9;
+const int Pin_ButtonLB = 10; // LBボタンの配線先がピン10
+const int Pin_ButtonRB = 9;  // RBボタンの配線先がピン9
 
-const int Pin_ButtonBack = 5;
-const int Pin_ButtonStart = 6;
+const int Pin_ButtonBack = 5; // Backボタンはピン5に配線
+const int Pin_ButtonStart = 6; // Startボタンはピン6に配線
 
-const int Pin_ButtonL3 =  18;
-const int Pin_ButtonR3 = 19;
+const int Pin_ButtonL3 =  18; // L3スイッチはピン18に接続
+const int Pin_ButtonR3 = 19; // R3スイッチはピン19に接続
 
-const int Pin_DpadUp = kHallPins[HallUp];     // A0 / pin14
-const int Pin_DpadDown = kHallPins[HallDown]; // A1 / pin15
-const int Pin_DpadLeft = kHallPins[HallLeft]; // A2 / pin16
-const int Pin_DpadRight = kHallPins[HallRight]; // A3 / pin17
+const int Pin_DpadUp = kHallPins[HallUp];     // A0 / pin14 を上方向センサに使用
+const int Pin_DpadDown = kHallPins[HallDown]; // A1 / pin15 を下方向センサに使用
+const int Pin_DpadLeft = kHallPins[HallLeft]; // A2 / pin16 を左方向センサに使用
+const int Pin_DpadRight = kHallPins[HallRight]; // A3 / pin17 を右方向センサに使用
 
-const int Pin_ButtonXbox = 4;
+const int Pin_ButtonXbox = 4; // Xboxガイドボタンはピン4に配線
 
-const int Pin_TriggerL = 20;
-const int Pin_TriggerR = 21;
+const int Pin_TriggerL = 20; // LTスイッチは干渉しないピン20へ移設
+const int Pin_TriggerR = 21; // RTスイッチはピン21へ移設
 
 Bounce debouncerA = Bounce();
 Bounce debouncerB = Bounce();
