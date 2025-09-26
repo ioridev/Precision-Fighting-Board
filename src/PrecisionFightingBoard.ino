@@ -159,10 +159,10 @@ const int Pin_ButtonStart = 6;
 const int Pin_ButtonL3 =  18;
 const int Pin_ButtonR3 = 19;
 
-const int Pin_DpadUp = kHallPins[HallUp];
-const int Pin_DpadDown = kHallPins[HallDown];
-const int Pin_DpadLeft = kHallPins[HallLeft];
-const int Pin_DpadRight = kHallPins[HallRight];
+const int Pin_DpadUp = kHallPins[HallUp];     // A0 / pin14
+const int Pin_DpadDown = kHallPins[HallDown]; // A1 / pin15
+const int Pin_DpadLeft = kHallPins[HallLeft]; // A2 / pin16
+const int Pin_DpadRight = kHallPins[HallRight]; // A3 / pin17
 
 const int Pin_ButtonXbox = 4;
 
@@ -338,4 +338,3 @@ void loop()
 
   XInput.send();
 }
-
